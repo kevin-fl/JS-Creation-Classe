@@ -13,7 +13,7 @@
 Mot-clé class suivi par un nom (premiere lettre en majscule) - ensuite on utilise le constructor 
 */
 
-let Livre = class Livre {
+let Livre = class Livre {                       //-> si je veux je declare class livre dans une fonction et je marque juste class sans livre , ca fonctionnera egalement
     constructor(titre, auteur, nbrePages) {
         this.titre = titre;
         this.auteur = auteur;
@@ -39,8 +39,8 @@ class Animal {
       this.nom = nom;
     }
   
-    present() {
-      return 'i have a'+ this.nom;
+    present() {                         //-> methode
+      return 'i have a'+ this.nom;              
     }
   }
   
@@ -57,10 +57,10 @@ class Animal {
     }
   }
 let myAnimal = new Chien( "berger" , "Allemand");
-let myAnimal2 = new Chien ("Jean", "Le blanc");
+let myAnimal2 = new Chien (" Berger", " Lion");
 //document.getElementById("demo").innerHTML = myAnimal.show();   //--> censer fonctionner dans le html
 console.log(myAnimal); //-> fonctionne 
-console.log(myAnimal2);
+console.log(myAnimal2.show());
 
 
 
@@ -84,10 +84,10 @@ console.log(myAnimal2);
         this.auteur);
     }                                        
     
-    affichage2(){                                                     //-->cree une fonction anonyme ou methode    // je peux cree un argument dans l affichage2()
+    affichage2(nom){                                                     //-->cree une fonction anonyme ou methode    // je peux cree un argument dans l affichage2()
         console.log(
             "j aime " +
-            this.auteur);
+            this.auteur + " " + nom);
     } 
 
     };
@@ -101,7 +101,16 @@ console.log(monLLivre);
 let monLLivre2 = new LLivre("holy Book", "unknown", 114)
 console.log(monLLivre2);
 
+let monLLivre3 = new LLivre("FROUSSARDE", "INES", 114)
+console.log(monLLivre3);
+
+
 
 monLLivre.affichage1();                                 //--> crée l affichage de la methode 1 de monLLivre
-monLLivre.affichage2();                                 //--> cree l affichage de la methode 2 de monLLivre
+monLLivre.affichage2(" ines a la frousse");                                 //--> cree l affichage de la methode 2 de monLLivre
 
+
+
+
+
+                                    
