@@ -111,6 +111,33 @@ monLLivre.affichage2(" ines a la frousse");                                 //--
 
 
 
+                                //OBJECT.setPrototypeOf()
+
+//En revanche, les classes ne permettent pas d'étendre des objets classiques non-constructibles.
+ //Si on souhaite créer un lien d'héritage en un objet et une classe, on utilisera Object.setPrototypeOf() :
+
+const Animall = {
+  crie() {
+    console.log(`${this.nom} fait du bruit.`);
+  }
+};
+
+class Chienn {
+  constructor(nom) {
+    this.nom = nom;
+  }
+  crie() {
+    super.crie();
+    console.log(`${this.nom} aboie.`);
+  }
+}
+Object.setPrototypeOf(Chienn.prototype, Animall);
+
+let d = new Chienn('Ida');
+d.crie();
+// Ida fait du bruit
+// Ida aboie.
 
 
-                                    
+               
+
